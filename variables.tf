@@ -2,6 +2,7 @@ variable "tenancy_ocid" {
   description = "OCID of the tenancy"
   type        = string
   nullable    = false
+  sensitive   = true
 }
 
 variable "region" {
@@ -41,22 +42,33 @@ variable "ssh_public_key" {
   description = "Public key to be used for SSH access to compute instances"
   type        = string
   nullable    = false
+  sensitive   = true
 }
 
 variable "user_ocid" {
   description = "OCID of the user"
   type        = string
   nullable    = false
+  sensitive   = true
 }
 
 variable "fingerprint" {
   description = "Fingerprint of the public key"
   type        = string
   nullable    = false
+  sensitive   = true
 }
 
 variable "compartment_id" {
   description = "ID of the compartment"
   type        = string
   nullable    = false
+  sensitive   = true
+}
+
+variable "private_key" {
+  description = "OCI private key"
+  type        = string
+  nullable    = false
+  sensitive   = true
 }

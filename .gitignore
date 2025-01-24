@@ -1,0 +1,7 @@
+# Default ignore file for TF
+.idea
+*.tfstate
+*.tfstate.backup
+*.tfstate.backup.*
+*.tfplan
+.terraform/
