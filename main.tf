@@ -50,7 +50,7 @@ resource "oci_core_default_security_list" "this" {
     }
   }
 
-    dynamic "ingress_security_rules" {
+  dynamic "ingress_security_rules" {
     for_each = [51820]
     iterator = port
     content {
@@ -185,4 +185,9 @@ resource "oci_core_volume_backup_policy" "this" {
     retention_seconds = 86400
     time_zone         = "REGIONAL_DATA_CENTER_TIME"
   }
+}
+
+resource "oci_core_volume_backup_policy_assignment" "this" {
+  asset_id  = oci_core_instance.this.0.boot_volume_id
+  policy_id = oci_core_volume_backup_policy.this.id
 }

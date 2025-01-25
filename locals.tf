@@ -24,8 +24,5 @@ locals {
     this : {
       runcmd : ["apt-get remove --quiet --assume-yes --purge apparmor"]
     },
-    that : {
-      runcmd : ["grubby --args selinux=0 --update-kernel ALL"]
-    },
   }
 }
